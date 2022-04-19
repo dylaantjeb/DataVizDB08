@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Montserrat:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(213, 213, 213);
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.coin{
+    position: absolute;
+    top: 102%;
+    left: 46%;
+    height: 9%;
+    width: 9%;
+    z-index: 1;
+}
+
+.arwhd{
+    position: absolute;
+    top: 112%;
+    left: 49%;
+    height: 5%;
+    width: 3%;
+    z-index: 1;
+}
+
+.arwhd2{
+    position: absolute;
+    top: 115%;
+    left: 49%;
+    height: 5%;
+    width: 3%;
+    z-index: 1;
+}
+
+
+.t1{
+    font-family: 'Bungee Shade', cursive;
+    padding-top: 20%;
+    margin: 0;
+    position: relative;
+    font-size: 5em;
+    margin-top: 0%;
+    left: 33%;
+    color: black;
+    z-index: 2;
+
+}
+
+.t2{
+    font-family: 'Bungee Shade', cursive;
+    padding-top: 0%;
+    padding-bottom: 2%;
+    margin: 0;
+    position: relative;
+    font-size: 2em;
+    margin-top: 0%;
+    left: 41%;
+    color: black;
+    z-index: 2;
+
+}
+
+.svg-icon{
+    background-color: black;
+    z-index: 3;
+}
+
+.ut1{
+    position: relative;
+    margin-top: 1%;
+    font-size: 1.5em;
+    left: 45%;
+    text-decoration: none;
+    z-index: 2;
+    border-bottom: 1px solid transparent;    
+    transition: all .3s ease-in;
+    max-width: fit-content;
+    color: black;
+    
+    
+}
+
+.ut1:hover{
+    border-bottom: 1px solid black;    
+}
+
+.d1{
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    
+}
+
+.d2{
+    position: absolute;
+    left: -4%;
+    top: 70%;
+    height: 150px;
+    width: 100px;
+    background-color: #FFCF00;
+    z-index: 2;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s;
+}
+
+.d2:hover{
+    background-color:#FFCF00;
+    top: 58%;
+    height: 32%;
+    width: 300px;
+    left: 1%;
+
+}
+
+.back{
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, #ffffff 0%, #f7f584 35%, #ffcf00 100%);
+}
+
+.form{
+    position: relative;
+    left: 10%;
+    margin-top: 10%;
+    visibility: visible;
+    color: transparent;
+}
+
+.form:hover {
+    visibility: visible;
+    z-index: 2;
+    color: black;
+}
+
+.inc{
+    position: relative;
+    height: 10%;
+    width: 45%;
+    background-color: transparent;
+}
+
+.incvr{
+    position: relative;
+}
+
+.go{
+    position: relative;
+    left: 5%;
+    height: 10%;
+    width: 20%;
+    text-decoration: none;
+    z-index: 2;
+    border-bottom: 1px solid transparent;    
+    transition: all .3s ease-in;
+    max-width: fit-content;
+    color: black;
+    background-color: transparent;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+}
+
+.go:hover{
+    border-bottom: 1px solid black;    
+}
+
+.f1{
+    position: absolute;
+    color: transparent;
+    font-size: 1.2em;
+    top: 30%;
+    left: 34%;
+}
+
+.ins{
+    position: absolute;
+    margin-top: 60%;
+    left: 60%;
+    height: 30px;
+    width: 30px;
+    visibility: visible;
+}
+
+
+
+
