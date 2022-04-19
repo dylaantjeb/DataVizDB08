@@ -42,24 +42,93 @@
 
     
         });
-
-        function getVal(){
-            const inc = document.getElementById("inc").value;
-            const aow = document.getElementById("aow").value;
-
-
-            console.log(inc)
-            console.log(aow)
-        }
         
         var myGeoJSONPath = 'europe.geojson';
         var myCustomStyle = {
+          stroke: false,
+          fill: true,
+          fillColor: '#fff',
+          fillOpacity: 0.8
+        }
+
+        function getVal(){
+
+          if(document.getElementById("inc").value <= 1000 ){
+
+            var myCustomStyle = {
             stroke: false,
             fill: true,
-            fillColor: '#fff',
+            fillColor: 'red',
             fillOpacity: 0.8
-        }
-        $.getJSON(myGeoJSONPath,function(data){
+            };
+
+
+          }
+
+          else if(document.getElementById("inc").value > 1000 && document.getElementById("inc").value <= 1500){
+
+            var myCustomStyle = {
+              stroke: false,
+              fill: true,
+              fillColor: 'orange',
+              fillOpacity: 0.8
+              };
+
+          }
+
+          else if(document.getElementById("inc").value > 1500 && document.getElementById("inc").value <= 2000){
+
+            var myCustomStyle = {
+              stroke: false,
+              fill: true,
+              fillColor: 'lightgreen',
+              fillOpacity: 0.8
+              };
+
+          }
+
+          else if(document.getElementById("inc").value > 2000 && document.getElementById("inc").value <= 2500){
+
+            var myCustomStyle = {
+              stroke: false,
+              fill: true,
+              fillColor: 'lightgreen',
+              fillOpacity: 0.8
+              };
+
+          }
+
+          else if(document.getElementById("inc").value > 2500 && document.getElementById("inc").value > 3000){
+
+            var myCustomStyle = {
+              stroke: false,
+              fill: true,
+              fillColor: 'green',
+              fillOpacity: 0.8
+              };
+            }
+
+          else{
+
+            var myCustomStyle = {
+              stroke: false,
+              fill: true,
+              fillColor: '#fff',
+              fillOpacity: 0.8
+          }
+
+          }
+
+
+
+            console.log(document.getElementById("inc").value);
+            console.log(document.getElementById("aow").value);
+            
+            return myCustomStyle;
+
+          };
+
+          $.getJSON(myGeoJSONPath,function(data){
             var map = L.map('map').setView([55, 20], 4);
 
             L.geoJson(data, {
@@ -82,6 +151,8 @@
             } 
           });
         }
+
+
 
      </script>
 
