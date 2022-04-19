@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pensioen vergelijker</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style type="text/css">
+        .leaflet-container{background-color: transparent;}
+    </style>
+</head>
+
+<body class="back">
+
+    <div class="d1" id="map" style="width: 100%; height: 800px"></div>
+
+    <div type="button" class="d2">
+        <img class="ins" src="instellingen.png"/>
+      <form class="form" id="myForm"> 
+        <label class="incvr">Wat is op dit moment uw netto inkomen? (per maand)</label><br><br>
+        <input class="inc" type="text" id="inc" name="inc" /><br><br>
+        <label class="incvr">Wat is uw huidige AOW leeftijd</label><br><br>
+        <input class="inc" type="text" id="aow" name="aow" /><br><br>
+        <button onclick="getVal()" class="go" type="submit">Update</button>
+    </form>
+
+    <script src="script.js">
+    </script>
+
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+    <script>
+
+        const myForm = document.getElementById("myForm");
+
+        myForm.addEventListener("submit", (e) => {
+
+            e.preventDefault();
+
+    
+        });
+
+        function getVal(){
+            const inc = document.getElementById("inc").value;
+            const aow = document.getElementById("aow").value;
+
+
+            console.log(inc)
+            console.log(aow)
+        }
+        
+        var myGeoJSONPath = 'europe.geojson';
+        var myCustomStyle = {
+            stroke: false,
+            fill: true,
+            fillColor: '#fff',
+            fillOpacity: 0.8
+        }
+        $.getJSON(myGeoJSONPath,function(data){
+            var map = L.map('map').setView([55, 20], 4);
+
+            L.geoJson(data, {
+                clickable: true,
+                style: myCustomStyle
+            }).addTo(map);
+        })
+
+        var coll = document.getElementsByClassName("d2");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+
+     </script>
+
+
+</body>
+</html>
